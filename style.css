@@ -81,8 +81,3 @@ textarea {
 button:hover {
     background-color: #3a64ad;
 }
-
-.error {
-    color: #c0392b;
-    font-size: 0.85em;
-}
