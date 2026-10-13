@@ -7,10 +7,12 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <form>
+    <form id="form">
         <h1>Sign Up/Sign In</h1>
         <h1>Conecteaza te fratello</h1>
         <label for="name">Name</label>
+        <input type="text" id="name" name="name">
+        <span id="name-error" class="error"></span>
 
         <label for="email">Email</label>
         <input type="email" id="email" name="email">
@@ -39,5 +41,38 @@
 
         <button type="submit">Submit</button>
     </form>
+
+    <script>
+        // Numele trebuie scris doar cu litere mari (sunt permise spatii si cratime intre cuvinte)
+        function valideazaNume(nume) {
+            nume = nume.trim();
+            if (nume === "") {
+                return "Numele este obligatoriu.";
+            }
+            if (!/^[A-ZĂÂÎȘȚ]+([ -][A-ZĂÂÎȘȚ]+)*$/.test(nume)) {
+                return "Numele trebuie introdus doar cu litere mari (ex: POPESCU ION).";
+            }
+            return "";
+        }
+
+        const form = document.getElementById("form");
+        const numeInput = document.getElementById("name");
+        const numeEroare = document.getElementById("name-error");
+
+        function afiseazaEroareNume() {
+            const eroare = valideazaNume(numeInput.value);
+            numeEroare.textContent = eroare;
+            return eroare === "";
+        }
+
+        numeInput.addEventListener("input", afiseazaEroareNume);
+
+        form.addEventListener("submit", function (e) {
+            if (!afiseazaEroareNume()) {
+                e.preventDefault();
+                numeInput.focus();
+            }
+        });
+    </script>
 </body>
 </html>
