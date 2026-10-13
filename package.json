@@ -1,0 +1,20 @@
+{
+  "name": "web_prj_git",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MateiTita/WEB_prj_git.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MateiTita/WEB_prj_git/issues"
+  },
+  "homepage": "https://github.com/MateiTita/WEB_prj_git#readme"
+}
