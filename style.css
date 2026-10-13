@@ -54,3 +54,30 @@ button {
     font-size: 16px;
     cursor: pointer;
 }
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="date"]:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #4a7bd0;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    accent-color: #4a7bd0;
+}
+
+label:not([for]) {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button:hover {
+    background-color: #3a64ad;
+}
